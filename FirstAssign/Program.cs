@@ -4,12 +4,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FirstAssign
+using System;
+
+namespace MultiFunctionApp
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
+            bool exit = false;
+
+            while (!exit)
+            {
+                Console.WriteLine("\n===== MAIN MENU =====");
+                Console.WriteLine("1. Grade Calculator");
+                Console.WriteLine("2. Ticket Price Calculator");
+                Console.WriteLine("3. Triangle Type Identifier");
+                Console.WriteLine("4. Exit");
+                Console.Write("Enter your choice (1-4): ");
+
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+                        GradeCalculator();
+                        break;
+                    case "2":
+                        TicketPriceCalculator();
+                        break;
+                    case "3":
+                        TriangleTypeIdentifier();
+                        break;
+                    case "4":
+                        exit = true;
+                        Console.WriteLine("Exiting application. Goodbye!");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid input. Please choose between 1 and 4.");
+                        break;
+                }
+            }
         }
-    }
-}
